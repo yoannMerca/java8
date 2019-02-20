@@ -94,10 +94,15 @@ public class Main {
 		
 		NameParser parser = new NameParser();
 		Name res = parser.parse("Eric Clapton", Name::new);
-		
+		Name res2 = parser.parse("Eric"," Clapton",34, Name::new);
 		Personne p = parser.parse("keith richards", (o1, o2)-> new Personne(o1,o2));
 		
+		Personne p2 = parser.parse("monNom", "monPrenom", Personne::new);
+		Personne p3 = parser.parse("monNom", "monPrenom", (o1, o2)-> new Personne(o1,o2));
+		
+		
 		System.out.println(res.toString()+"  "+p.toString());
+		System.out.println(res2.toString());
 	}
 	
 	
